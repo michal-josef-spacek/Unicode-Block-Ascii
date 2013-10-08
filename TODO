@@ -4,7 +4,9 @@ TODO
 2. Testy.
 3. Znaky, ktere nejsou definovane neumozni vytvoreni tabulky. Jak zjisit, ze
    nejsou definovane?
-4.
+4. Kdyz je znak prazdny, tak to borti tabulku.
+5. Kdyz je znak netiskuntelny, tak to borti tabulku.
+6.
 
 Applied
 =======
