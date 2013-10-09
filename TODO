@@ -6,11 +6,14 @@ TODO
    nejsou definovane?
 4. Kdyz je znak prazdny, tak to borti tabulku.
 5. Kdyz je znak netiskuntelny, tak to borti tabulku.
-7. Spojovaci znaky borti tabulku.
 8.
 
 Applied
 =======
 6. Block od '0100' do '017f' borti tabulku.
+Opraveno v Unicode::Block.
+NONE [20131009] skim
+
+7. Spojovaci znaky borti tabulku.
 Opraveno v Unicode::Block.
 NONE [20131009] skim
