@@ -95,7 +95,7 @@ sub get {
 				push @cols, ($SPACE, BOX_RULE) x $last_num;
 			}
 		}
-		push @cols, $item->value;
+		push @cols, $item->char;
 		if ($item->last_hex eq 'f') {
 			$box->add_line(
 				BOX_START('bottom' => 'light'),
