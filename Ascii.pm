@@ -36,7 +36,8 @@ sub new {
 		my $spaces = $WIDTH - length $self->{'title'};
 		my $left = int($spaces / 2);
 		my $right = $WIDTH - $left - length $self->{'title'};
-		$self->{'_title'} = ($SPACE x $left).$self->{'title'}.($SPACE x $right);
+		$self->{'_title'} = ($SPACE x $left).$self->{'title'}.
+			($SPACE x $right);
 	}
 
 	# Object.
