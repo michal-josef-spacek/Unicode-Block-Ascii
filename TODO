@@ -6,7 +6,9 @@ TODO
    nejsou definovane?
 4. Kdyz je znak prazdny, tak to borti tabulku.
 5. Kdyz je znak netiskuntelny, tak to borti tabulku.
-8.
+8. Kdyz je znak sirsi, tak borti tabulku.
+   Text::CharWidth.
+9.
 
 Applied
 =======
