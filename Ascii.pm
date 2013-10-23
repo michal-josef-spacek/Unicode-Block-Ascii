@@ -59,11 +59,13 @@ sub get {
 		if (@headers) {
 			push @headers, BOX_RULE;
 		}
+		my $table_header_char = $header_char;
 		if ($self->{'_char_width'} > 1) {
-			$header_char = ($SPACE x ($self->{'_char_width'} - 1)).
+			$table_header_char
+				= ($SPACE x ($self->{'_char_width'} - 1)).
 				$header_char;
 		}
-		push @headers, $header_char;
+		push @headers, $table_header_char;
 	}
 	my @title;
 	if (! defined $self->{'title'}) {
