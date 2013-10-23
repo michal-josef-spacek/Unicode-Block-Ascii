@@ -6,7 +6,6 @@ use strict;
 use warnings;
 
 # Modules.
-use Class::Utils qw(set_params split_params);
 use Error::Pure qw(err);
 use Readonly;
 use Text::UnicodeBox;
