@@ -23,7 +23,8 @@ sub get {
 
 	# Get width.
 	$self->_get_chars;
-	$self->{'_width'} = 24 + (16 * $self->{'_char_width'});
+	$self->{'_width'} = 16 + $self->{'_base_width'}
+		+ (16 * $self->{'_char_width'});
 
 	# Check width.
 	if (defined $self->{'title'}
@@ -53,7 +54,7 @@ sub get {
 	}
 
 	# Header.
-	my @headers = $SPACE x 8, BOX_RULE;
+	my @headers = $SPACE x $self->{'_base_width'}, BOX_RULE;
 	foreach my $header_char (0 .. 9, 'A' .. 'F') {
 		if (@headers) {
 			push @headers, BOX_RULE;
@@ -117,10 +118,20 @@ sub _get_chars {
 	my $self = shift;
 	$self->{'_chars'} = [];
 	$self->{'_char_width'} = 1;
+	$self->{'_base_width'} = 0;
 	while (my $item = $self->next) {
+
+		# Look for maximal character width in table.
 		if ($item->width > $self->{'_char_width'}) {
 			$self->{'_char_width'} = $item->width;
 		}
+
+		# Look for maximal base length in table.
+		if ((length $item->base) + 2 > $self->{'_base_width'}) {
+			$self->{'_base_width'} = (length $item->base) + 2;
+		}
+
+		# Add character.
 		push @{$self->{'_chars'}}, $item;
 	}
 	return;
