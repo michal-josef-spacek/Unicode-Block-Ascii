@@ -8,7 +8,6 @@ use warnings;
 # Modules.
 use Error::Pure qw(err);
 use Readonly;
-use Text::CharWidth qw(mbwidth);
 use Text::UnicodeBox;
 use Text::UnicodeBox::Control qw(:all);
 
@@ -59,8 +58,9 @@ sub get {
 		if (@headers) {
 			push @headers, BOX_RULE;
 		}
-		if (mbwidth($header_char) < $self->{'_char_width'}) {
-			$header_char = $SPACE.$header_char;
+		if ($self->{'_char_width'} > 1) {
+			$header_char = ($SPACE x ($self->{'_char_width'} - 1)).
+				$header_char;
 		}
 		push @headers, $header_char;
 	}
@@ -85,9 +85,9 @@ sub get {
 			}
 		}
 		my $char = $item->char;
-		# TODO Prepsat na item.
-		if (mbwidth($char) < $self->{'_char_width'}) {
-			$char = $SPACE.$char;
+		if ($item->width < $self->{'_char_width'}) {
+			$char = ($SPACE x ($self->{'_char_width'}
+				- $item->width)).$char;
 		}
 		push @cols, $char;
 		if ($item->last_hex eq 'f') {
@@ -118,9 +118,8 @@ sub _get_chars {
 	$self->{'_chars'} = [];
 	$self->{'_char_width'} = 1;
 	while (my $item = $self->next) {
-		my $char_width = mbwidth($item->char);
-		if ($char_width > $self->{'_char_width'}) {
-			$self->{'_char_width'} = $char_width;
+		if ($item->width > $self->{'_char_width'}) {
+			$self->{'_char_width'} = $item->width;
 		}
 		push @{$self->{'_chars'}}, $item;
 	}
