@@ -19,43 +19,31 @@ Readonly::Scalar our $WIDTH => 40;
 # Version.
 our $VERSION = 0.01;
 
-# Constructor.
-sub new {
-	my ($class, @params) = @_;
-
-	# Object.
-	my $self = $class->SUPER::new(@params);
+# Get output.
+sub get {
+	my $self = shift;
 
 	# Check width.
 	if (defined $self->{'title'} && (length $self->{'title'}) > $WIDTH) {
 		err 'Long title.';
 	}
 
-	# Compute title.
-	if (defined $self->{'title'}) {
-		my $spaces = $WIDTH - length $self->{'title'};
-		my $left = int($spaces / 2);
-		my $right = $WIDTH - $left - length $self->{'title'};
-		$self->{'_title'} = ($SPACE x $left).$self->{'title'}.
-			($SPACE x $right);
-	}
-
-	# Object.
-	return $self;
-}
-
-# Get output.
-sub get {
-	my $self = shift;
-
 	# Box objext.
 	my $box = Text::UnicodeBox->new;
 
 	# Title.
 	if (defined $self->{'title'}) {
+
+		# Compute title.
+		my $spaces = $WIDTH - length $self->{'title'};
+		my $left = int($spaces / 2);
+		my $right = $WIDTH - $left - length $self->{'title'};
+		my $title = ($SPACE x $left).$self->{'title'}.($SPACE x $right);
+
+		# Add title.
 		$box->add_line(
 			BOX_START('top' => 'light', 'bottom' => 'light'),
-			$self->{'_title'},
+			$title,
 			BOX_END(),
 		);
 	}
