@@ -8,12 +8,12 @@ use warnings;
 # Modules.
 use Error::Pure qw(err);
 use Readonly;
+use Text::CharWidth qw(mbwidth);
 use Text::UnicodeBox;
 use Text::UnicodeBox::Control qw(:all);
 
 # Constants.
 Readonly::Scalar our $SPACE => q{ };
-Readonly::Scalar our $WIDTH => 40;
 
 # Version.
 our $VERSION = 0.01;
@@ -22,8 +22,14 @@ our $VERSION = 0.01;
 sub get {
 	my $self = shift;
 
+	# Get width.
+	$self->_get_chars;
+	$self->{'_width'} = 24 + (16 * $self->{'_char_width'});
+
 	# Check width.
-	if (defined $self->{'title'} && (length $self->{'title'}) > $WIDTH) {
+	if (defined $self->{'title'}
+		&& (length $self->{'title'}) > $self->{'_width'}) {
+
 		err 'Long title.';
 	}
 
@@ -34,9 +40,9 @@ sub get {
 	if (defined $self->{'title'}) {
 
 		# Compute title.
-		my $spaces = $WIDTH - length $self->{'title'};
+		my $spaces = $self->{'_width'} - length $self->{'title'};
 		my $left = int($spaces / 2);
-		my $right = $WIDTH - $left - length $self->{'title'};
+		my $right = $self->{'_width'} - $left - length $self->{'title'};
 		my $title = ($SPACE x $left).$self->{'title'}.($SPACE x $right);
 
 		# Add title.
@@ -48,10 +54,13 @@ sub get {
 	}
 
 	# Header.
-	my @headers;
-	foreach my $header_char ($SPACE x 8, 0 .. 9, 'A' .. 'F') {
+	my @headers = $SPACE x 8, BOX_RULE;
+	foreach my $header_char (0 .. 9, 'A' .. 'F') {
 		if (@headers) {
 			push @headers, BOX_RULE;
+		}
+		if (mbwidth($header_char) < $self->{'_char_width'}) {
+			$header_char = $SPACE.$header_char;
 		}
 		push @headers, $header_char;
 	}
@@ -65,7 +74,7 @@ sub get {
 
 	# Columns.
 	my @cols;
-	while (my $item = $self->next) {
+	foreach my $item (@{$self->{'_chars'}}) {
 		if (@cols) {
 			push @cols, BOX_RULE;
 		} else {
@@ -75,7 +84,12 @@ sub get {
 				push @cols, ($SPACE, BOX_RULE) x $last_num;
 			}
 		}
-		push @cols, $item->char;
+		my $char = $item->char;
+		# TODO Prepsat na item.
+		if (mbwidth($char) < $self->{'_char_width'}) {
+			$char = $SPACE.$char;
+		}
+		push @cols, $char;
 		if ($item->last_hex eq 'f') {
 			$box->add_line(
 				BOX_START('bottom' => 'light'),
@@ -96,6 +110,21 @@ sub get {
 		);
 	}
 	return $box->render;
+}
+
+# Get chars and compute char width.
+sub _get_chars {
+	my $self = shift;
+	$self->{'_chars'} = [];
+	$self->{'_char_width'} = 1;
+	while (my $item = $self->next) {
+		my $char_width = mbwidth($item->char);
+		if ($char_width > $self->{'_char_width'}) {
+			$self->{'_char_width'} = $char_width;
+		}
+		push @{$self->{'_chars'}}, $item;
+	}
+	return;
 }
 
 1;
