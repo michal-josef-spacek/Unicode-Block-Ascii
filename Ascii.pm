@@ -24,15 +24,7 @@ sub new {
 	my ($class, @params) = @_;
 
 	# Object.
-	my ($object_params_ar, $other_params_ar) = split_params(
-		['title'], @params);
-	my $self = $class->SUPER::new(@{$other_params_ar});
-
-	# Title.
-	$self->{'title'} = undef;
-
-	# Process.
-	set_params($self, @{$object_params_ar});
+	my $self = $class->SUPER::new(@params);
 
 	# Check width.
 	if (defined $self->{'title'} && (length $self->{'title'}) > $WIDTH) {
