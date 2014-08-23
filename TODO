@@ -1,6 +1,5 @@
 TODO
 ====
-1. Man page.
 2. Testy.
 3. Znaky, ktere nejsou definovane neumozni vytvoreni tabulky. Jak zjisit, ze
    nejsou definovane?
@@ -21,3 +20,6 @@ NONE [20131009] skim
 8. Kdyz je znak sirsi, tak borti tabulku.
    Text::CharWidth.
 OK [20131023] skim
+
+1. Man page.
+OK [20140823] skim
