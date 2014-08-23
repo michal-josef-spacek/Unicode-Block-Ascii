@@ -10,6 +10,7 @@ abstract 'Ascii output of unicode block.';
 author 'Michal Špaček <skim@cpan.org>';
 license 'bsd';
 name 'Unicode-Block-Ascii';
+readme_from 'Ascii.pm';
 requires 'Class::Utils' => 0.02;
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=Unicode-Block-Ascii';
