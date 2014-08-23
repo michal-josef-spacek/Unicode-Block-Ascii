@@ -12,6 +12,11 @@ license 'bsd';
 name 'Unicode-Block-Ascii';
 readme_from 'Ascii.pm';
 requires 'Class::Utils' => 0.02;
+requires 'Error::Pure' => 0.16;
+requires 'Readonly' => 0;
+requires 'Text::UnicodeBox' => 0;
+requires 'Text::UnicodeBox::Control' => 0;
+requires 'Unicode::Block' => 0.02;
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=Unicode-Block-Ascii';
 resources 'homepage' => 'https://github.com/tupinek/Unicode-Block-Ascii';

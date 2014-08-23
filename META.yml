@@ -27,6 +27,11 @@ no_index:
     - t
 requires:
   Class::Utils: 0.02
+  Error::Pure: 0.16
+  Readonly: 0
+  Text::UnicodeBox: 0
+  Text::UnicodeBox::Control: 0
+  Unicode::Block: 0.02
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Unicode-Block-Ascii
   homepage: https://github.com/tupinek/Unicode-Block-Ascii
