@@ -22,6 +22,7 @@ meta-spec:
 name: Unicode-Block-Ascii
 no_index:
   directory:
+    - examples
     - inc
     - t
 requires:
