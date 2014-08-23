@@ -15,7 +15,7 @@ use Text::UnicodeBox::Control qw(:all);
 Readonly::Scalar our $SPACE => q{ };
 
 # Version.
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Get output.
 sub get {
@@ -275,6 +275,6 @@ BSD license.
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
