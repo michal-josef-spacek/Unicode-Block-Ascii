@@ -21,3 +21,5 @@ t/Unicode-Block-Ascii/00-use.t
 t/Unicode-Block-Ascii/01-version.t
 t/Unicode-Block-Ascii/02-pod_coverage.t
 t/Unicode-Block-Ascii/03-pod.t
+t/Unicode-Block-Ascii/04-new.t
+t/Unicode-Block-Ascii/05-next.t
