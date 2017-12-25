@@ -7,7 +7,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Ascii output of unicode block.';
-author 'Michal Spacek <skim@cpan.org>';
+author 'Michal Josef Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Unicode-Block-Ascii';
 readme_from 'Ascii.pm';
