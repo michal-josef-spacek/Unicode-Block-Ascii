@@ -15,7 +15,7 @@ use Text::UnicodeBox::Control qw(:all);
 Readonly::Scalar our $SPACE => q{ };
 
 # Version.
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 # Get output.
 sub get {
@@ -337,6 +337,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.02
+0.03
 
 =cut
