@@ -2,6 +2,7 @@
  - Add EXAMPLE2 section to doc.
  - Add tests for get() method.
  - Add tests from Unicode::Block.
+ - Rewrite tests to author tests and other.
  - Update LICENSE AND COPYRIGHT section in doc.
  - Update Module::Install to 1.18 version.
  - Update author name.
