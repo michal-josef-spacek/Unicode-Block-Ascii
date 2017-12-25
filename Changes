@@ -3,7 +3,7 @@
  - Add tests for get() method.
  - Add tests from Unicode::Block.
  - Update LICENSE AND COPYRIGHT section in doc.
- - Update Module::Install to 1.14 version.
+ - Update Module::Install to 1.18 version.
 
 0.01 2014-08-23T15:00:01+02:00
  - First version.
