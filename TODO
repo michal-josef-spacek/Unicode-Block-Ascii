@@ -5,7 +5,9 @@ TODO
    nejsou definovane?
 4. Kdyz je znak prazdny, tak to borti tabulku.
 5. Kdyz je znak netiskuntelny, tak to borti tabulku.
-9.
+9. Nejde tisknout 'Combining Diacritical Marks', pricemz Unicode::Block::Item to vytiskne spravne.
+   Problem je v Text::UnicodeBox.
+10.
 
 Applied
 =======
