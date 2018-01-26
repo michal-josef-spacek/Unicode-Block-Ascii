@@ -1,11 +1,9 @@
 package Unicode::Block::Ascii;
 
-# Pragmas.
 use base qw(Unicode::Block);
 use strict;
 use warnings;
 
-# Modules.
 use Error::Pure qw(err);
 use Readonly;
 use Text::UnicodeBox;
@@ -14,7 +12,6 @@ use Text::UnicodeBox::Control qw(:all);
 # Constants.
 Readonly::Scalar our $SPACE => q{ };
 
-# Version.
 our $VERSION = 0.03;
 
 # Get output.
@@ -209,11 +206,9 @@ Constructor.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Encode qw(encode_utf8);
  use Unicode::Block::Ascii;
  use Unicode::Block::List;
@@ -253,11 +248,9 @@ Constructor.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
  
- # Modules.
  use Curses::UI;
  use Encode qw(encode_utf8);
  use Unicode::Block::Ascii;
