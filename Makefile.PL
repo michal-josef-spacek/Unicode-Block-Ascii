@@ -1,4 +1,4 @@
-use lib 'inc';
+use lib '.';
 use strict;
 use warnings;
 
