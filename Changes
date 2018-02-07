@@ -1,3 +1,5 @@
+0.04
+
 0.03 2018-02-07T07:49:53+01:00
  - Fix Makefile.PL for new version of Perl and no default »use lib '.'«.
  - Fix output of second example in doc.
