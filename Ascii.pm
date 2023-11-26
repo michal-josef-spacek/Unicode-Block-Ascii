@@ -315,7 +315,7 @@ L<Unicode::Block>.
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/Unicode-Block-Ascii>
+L<https://github.com/michal-josef-spacek/Unicode-Block-Ascii>
 
 =head1 AUTHOR
 

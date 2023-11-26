@@ -33,7 +33,7 @@ requires:
   Unicode::Block: 0.02
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Unicode-Block-Ascii
-  homepage: https://github.com/tupinek/Unicode-Block-Ascii
+  homepage: https://github.com/michal-josef-spacek/Unicode-Block-Ascii
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/tupinek/Unicode-Block-Ascii
+  repository: git://github.com/michal-josef-spacek/Unicode-Block-Ascii
 version: '0.04'
