@@ -151,6 +151,7 @@ Unicode::Block::Ascii - Ascii output of unicode block.
 =head1 SYNOPSIS
 
  use Unicode::Block::Ascii;
+
  my $obj = Unicode::Block::Ascii->new(%parameters);
  my $output = $obj->get;
  my $item = $obj->next;
