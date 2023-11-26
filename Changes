@@ -1,5 +1,6 @@
 0.05
  - Move bugtracker to github.
+ - Remove unused code in tests.
  - Simplify usage of English.
  - Sort modules in test.
 
