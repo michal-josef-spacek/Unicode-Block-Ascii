@@ -158,9 +158,9 @@ Unicode::Block::Ascii - Ascii output of unicode block.
 
 =head1 METHODS
 
-=over 8
+=head2 C<new>
 
-=item C<new(%parameters)>
+ my $obj = Unicode::Block::Ascii->new(%parameters);
 
 Constructor.
 
@@ -168,33 +168,42 @@ Constructor.
 
 =item * C<char_from>
 
- Character from.
- Default value is '0000'.
+Character from.
+
+Default value is '0000'.
 
 =item * C<char_to>
 
- Character to.
- Default value is '007f'.
+Character to.
+
+Default value is '007f'.
 
 =item * C<title>
 
- Title of block.
- Default value is undef.
+Title of block.
+
+Default value is undef.
 
 =back
 
-=item C<get()>
+Returns instance of object.
 
- Get output.
- Return string with ascii table of Unicode::Block object.
+=head2 C<get>
 
-=item C<next()>
+ my $output = $obj->get;
 
- Get next character.
- Returns Unicode::Block::Item object for character, if character exists.
- Returns undef, if character doesn't exist.
+Get output.
 
-=back
+Return string with ascii table of Unicode::Block object.
+
+=head2 C<next>
+
+ my $item = $obj->next;
+
+Get next character.
+
+Returns Unicode::Block::Item object for character, if character exists.
+Returns undef, if character doesn't exist.
 
 =head1 ERRORS
 

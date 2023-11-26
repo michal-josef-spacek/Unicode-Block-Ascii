@@ -9,32 +9,45 @@ SYNOPSIS
      my $item = $obj->next;
 
 METHODS
-    "new(%parameters)"
-            Constructor.
+  "new"
+     my $obj = Unicode::Block::Ascii->new(%parameters);
 
-            *       "char_from"
+    Constructor.
 
-                     Character from.
-                     Default value is '0000'.
+    *       "char_from"
 
-            *       "char_to"
+            Character from.
 
-                     Character to.
-                     Default value is '007f'.
+            Default value is '0000'.
 
-            *       "title"
+    *       "char_to"
 
-                     Title of block.
-                     Default value is undef.
+            Character to.
 
-    "get()"
-             Get output.
-             Return string with ascii table of Unicode::Block object.
+            Default value is '007f'.
 
-    "next()"
-             Get next character.
-             Returns Unicode::Block::Item object for character, if character exists.
-             Returns undef, if character doesn't exist.
+    *       "title"
+
+            Title of block.
+
+            Default value is undef.
+
+    Returns instance of object.
+
+  "get"
+     my $output = $obj->get;
+
+    Get output.
+
+    Return string with ascii table of Unicode::Block object.
+
+  "next"
+     my $item = $obj->next;
+
+    Get next character.
+
+    Returns Unicode::Block::Item object for character, if character exists.
+    Returns undef, if character doesn't exist.
 
 ERRORS
      new():
