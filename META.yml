@@ -32,7 +32,7 @@ requires:
   Text::UnicodeBox::Control: 0
   Unicode::Block: 0.02
 resources:
-  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Unicode-Block-Ascii
+  bugtracker: https://github.com/michal-josef-spacek/Unicode-Block-Ascii/issues
   homepage: https://github.com/michal-josef-spacek/Unicode-Block-Ascii
   license: http://opensource.org/licenses/bsd-license.php
   repository: git://github.com/michal-josef-spacek/Unicode-Block-Ascii
