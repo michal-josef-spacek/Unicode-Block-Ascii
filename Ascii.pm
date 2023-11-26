@@ -12,7 +12,7 @@ use Text::UnicodeBox::Control qw(:all);
 # Constants.
 Readonly::Scalar our $SPACE => q{ };
 
-our $VERSION = 0.05;
+our $VERSION = 0.06;
 
 # Get output.
 sub get {
@@ -345,6 +345,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.05
+0.06
 
 =cut
