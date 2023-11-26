@@ -207,6 +207,8 @@ Constructor.
 
 =head1 EXAMPLE1
 
+=for comment filename=print_unicode_block.pl
+
  use strict;
  use warnings;
 
@@ -248,6 +250,8 @@ Constructor.
  # └────────┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
 
 =head1 EXAMPLE2
+
+=for comment filename=print_unicode_block_in_curses_ui.pl
 
  use strict;
  use warnings;
